@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MetamaskLogin from './connecttometamask';
+import ConnectToMetamask from './connecttometamask';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <ConnectToMetamask />
   </React.StrictMode>
 );
 

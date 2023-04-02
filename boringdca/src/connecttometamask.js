@@ -23,6 +23,8 @@ function ConnectToMetamask() {
     <div>
       <button onClick={connectToMetamask}>Connect to Metamask</button>
       {accounts && <p>Connected with account: {accounts[0]}</p>}
+      {/* Show account's balance */}
+
     </div>
   );
 }

@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { ethers } from 'ethers';
 
-function ConnectButton() {
+let provider;
+let signer = null;
 
+function ConnectButton(signer) {
+    async function connect() {
+        provider = new ethers.BrowserProvider(window.ethereum);
+        signer = await provider.getSigner();
+    }
     return (
         <div>
-            <button>Connect to Metamask</button>
+            <button onClick={connect}>Connect to Metamask</button>
         </div>
     );
 }

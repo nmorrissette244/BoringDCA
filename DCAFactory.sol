@@ -17,13 +17,7 @@ contract DCAFactory {
         uint256 _interval,
         uint256 _duration
     ) public {
-        DCA newDCA = new DCA(
-            _token,
-            _amfount,
-            _interval,
-            _duration,
-            msg.sender
-        );
+        DCA newDCA = new DCA(_token, _amount, _interval, _duration, msg.sender);
         deployedDCA.push(newDCA);
     }
 }

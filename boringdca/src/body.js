@@ -14,18 +14,9 @@ function Body() {
     window.addEventListener('load', () => connectionCheck());
 
     async function connectionCheck() {
-        if (window.ethereum == null) {
-            setConnected(false);
-            provider = ethers.getDefaultProvider()
-        } else {
+        // Checks if metamask is installed using ethers, and if so, if the user is connected
+        if (window.ethereum != null) {
             provider = new ethers.BrowserProvider(window.ethereum);
-        }
-        if (signer != null) {
-            setConnected(true);
-            console.log("signer is not null");
-        } else {
-            setConnected(false);
-            console.log("signer is null");
         }
     }
 
@@ -36,11 +27,7 @@ function Body() {
 
     return (
         <>
-            {isConnected ? (
-                <Dashboard />
-            ) : (
-                <ConnectButton />
-            )}
+            {isConnected ? <Dashboard /> : <ConnectButton />}
         </>
     );
 }
